@@ -1,0 +1,43 @@
+<div class="pokemon-details" *ngIf="pokemon">
+  <div class="pokemon-card">
+    <div class="header-artwork">
+      <img
+        [src]="pokemon.artwork"
+        alt="{{ pokemon.name }} artwork"
+        class="pokemon-artwork"
+      />
+    </div>
+    <div class="pokemon-header">
+      <img
+        [src]="pokemon.spriteFront"
+        alt="{{ pokemon.name }} front"
+        class="pokemon-image"
+      />
+      <img
+        [src]="pokemon.spriteBack"
+        alt="{{ pokemon.name }} back"
+        class="pokemon-image"
+      />
+    </div>
+    <div>
+      <h1 class="pokemon-name">#{{ pokemon.id }} {{ pokemon.name }}</h1>
+    </div>
+
+    <div class="pokemon-info">
+      <p>
+        <strong>Type:</strong>
+        <span
+          *ngFor="let type of pokemon.types"
+          class="type-badge"
+          [ngStyle]="{ 'background-color': typeColors[type] }"
+        >
+          {{ type }}
+        </span>
+      </p>
+      <p><strong>Height:</strong> {{ pokemon.height / 10 }} m</p>
+      <p><strong>Weight:</strong> {{ pokemon.weight / 10 }} kg</p>
+      <p><strong>Abilities:</strong> {{ pokemon.abilities.join(", ") }}</p>
+    </div>
+  </div>
+</div>
+<a class="home-link" routerLink="/">Home</a>

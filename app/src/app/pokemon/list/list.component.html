@@ -1,0 +1,27 @@
+<div class="search-container">
+  <input
+    type="text"
+    placeholder="Procurar Pokémon por nome"
+    [(ngModel)]="searchTerm"
+    class="search-input"
+  />
+  <button (click)="searchPokemon()" class="search-button">Search</button>
+</div>
+<div class="load-more-container">
+  <button class="load-more-button" (click)="loadMore()">Load More</button>
+</div>
+<div class="pokemon-list-container">
+  <div class="pokemon-list">
+    <div *ngFor="let pokemon of pokemons" class="pokemon-item">
+      <a [routerLink]="['/pokemon', pokemon.name]">
+        <img
+          [src]="pokemon.sprite"
+          [alt]="pokemon.name"
+          loading="lazy"
+          class="pokemon-image"
+        />
+        <div class="pokemon-name">#{{ pokemon.id }} {{ pokemon.name }}</div>
+      </a>
+    </div>
+  </div>
+</div>
