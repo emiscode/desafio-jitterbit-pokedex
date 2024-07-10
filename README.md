@@ -1,6 +1,6 @@
-# Desafio Jitterbit
+# Jitterbit Challenge - Pokedex
 
-- [Requisitos](./requirements.md)
+- [Requirements](./requirements.md)
 
 ## Run
 
