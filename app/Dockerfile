@@ -14,7 +14,7 @@ RUN npm install
 COPY . .
 
 # Build the Angular app and list the contents of the dist directory
-RUN npm run build && ls -la /app/dist && ls -la /app/dist/pokedex-app/browser
+RUN npm run build --prod && ls -la /app/dist && ls -la /app/dist/pokedex-app/browser
 
 # Stage 2: Serve the Angular app with Nginx
 FROM nginx:alpine
