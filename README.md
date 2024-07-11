@@ -12,12 +12,12 @@
 
 ## Run
 
+- for both /api and /app
+
 ```bash
 npm install
 npm run start
 ```
-
-- for both /api and /app
 
 ## Tests
 
