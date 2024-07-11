@@ -21,6 +21,12 @@ const mockPokemonDetails = [
   },
 ];
 
+const mockPokemonByName = {
+  id: 1,
+  name: "bulbasaur",
+  sprites: { front_default: "https://pokeapi.co/api/v2/pokemon/1/sprite" },
+};
+
 describe("PokemonService", () => {
   let service: PokemonService;
   let httpService: HttpService;
@@ -84,6 +90,27 @@ describe("PokemonService", () => {
         sprite: "https://pokeapi.co/api/v2/pokemon/2/sprite",
       },
     ]);
+  });
+
+  it("should return a Pokemon by name", async () => {
+    jest.spyOn(httpService, "get").mockImplementation((url: string): any => {
+      if (url.includes("/pokemon/bulbasaur")) {
+        return of({
+          data: mockPokemonByName,
+          status: 200,
+          statusText: "OK",
+          headers: {},
+          config: {},
+        });
+      }
+    });
+
+    const result = await service.getPokemonByName("bulbasaur");
+    expect(result).toEqual({
+      id: 1,
+      name: "bulbasaur",
+      sprite: "https://pokeapi.co/api/v2/pokemon/1/sprite",
+    });
   });
 
   // Add more test cases here if needed
