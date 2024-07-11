@@ -112,6 +112,4 @@ describe("PokemonService", () => {
       sprite: "https://pokeapi.co/api/v2/pokemon/1/sprite",
     });
   });
-
-  // Add more test cases here if needed
 });
