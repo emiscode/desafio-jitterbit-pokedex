@@ -17,6 +17,12 @@ npm run start
 
 [Link to the demo [English Version]](https://www.loom.com/share/043bdc21fbba479baf3945f58c41f764)
 
+## Tests
+
+```bash
+npm run test
+```
+
 ## Building and Running the Docker Container
 
 ### /api
