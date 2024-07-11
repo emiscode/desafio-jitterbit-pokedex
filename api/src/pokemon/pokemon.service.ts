@@ -26,7 +26,7 @@ export class PokemonService {
         return {
           id: pokemonDetails.data.id,
           name: pokemonDetails.data.name,
-          sprite: pokemonDetails.data.sprites.front_default,
+          sprite: pokemonDetails.data.sprites?.front_default,
         };
       })
     );
