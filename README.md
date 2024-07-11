@@ -22,9 +22,19 @@ npm run start
 ### /api
 
 ```bash
-docker build -t nestjs-pokemon-api .
+docker build --no-cache -t nestjs-pokemon-api .
 ```
 
 ```bash
 docker run -p 3000:3000 nestjs-pokemon-api
+```
+
+### /app
+
+```bash
+docker build --no-cache -t pokedex-app .
+```
+
+```bash
+docker run -p 4200:80 pokedex-app
 ```
