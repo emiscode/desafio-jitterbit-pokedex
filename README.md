@@ -21,6 +21,8 @@ npm run start
 
 ## Tests
 
+- /api
+
 ```bash
 npm run test
 ```
