@@ -5,7 +5,7 @@
       "src": "package.json",
       "use": "@vercel/angular",
       "config": {
-        "distDir": "dist/pokedex-app"
+        "distDir": "dist/pokedex-app/browser"
       }
     }
   ],
