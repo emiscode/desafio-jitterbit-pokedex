@@ -2,10 +2,10 @@
   "version": 2,
   "builds": [
     {
-      "src": "src/index.html",
+      "src": "package.json",
       "use": "@vercel/static-build",
       "config": {
-        "distDir": "dist/pokedex-app"
+        "distDir": "dist/pokedex/browser"
       }
     }
   ],
