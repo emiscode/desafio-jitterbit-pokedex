@@ -44,3 +44,7 @@ docker build --no-cache -t pokedex-app .
 ```bash
 docker run -p 4200:80 pokedex-app
 ```
+
+### API Docs
+
+- open `swagger.yaml` on [https://editor.swagger.io/](https://editor.swagger.io/)

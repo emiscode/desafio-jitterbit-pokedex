@@ -1,0 +1,110 @@
+openapi: 3.0.0
+info:
+  title: Pokemon API
+  description: API for managing Pokemon data
+  version: 1.0.0
+servers:
+  - url: http://localhost:3000
+paths:
+  /api/pokemon:
+    get:
+      summary: Get a list of Pokemon
+      parameters:
+        - name: offset
+          in: query
+          description: The number of items to skip before starting to collect the result set
+          required: false
+          schema:
+            type: integer
+            default: 0
+        - name: limit
+          in: query
+          description: The number of items to return
+          required: false
+          schema:
+            type: integer
+            default: 20
+      responses:
+        "200":
+          description: A list of Pokemon
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    id:
+                      type: integer
+                    name:
+                      type: string
+                    type:
+                      type: string
+        "400":
+          description: Bad request
+        "500":
+          description: Internal server error
+  /api/pokemon/search:
+    get:
+      summary: Search for a Pokemon by name
+      parameters:
+        - name: name
+          in: query
+          description: The name of the Pokemon to search for
+          required: true
+          schema:
+            type: string
+      responses:
+        "200":
+          description: A Pokemon matching the search criteria
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  id:
+                    type: integer
+                  name:
+                    type: string
+                  type:
+                    type: string
+        "400":
+          description: Bad request
+        "404":
+          description: Pokemon not found
+        "500":
+          description: Internal server error
+  /api/pokemon/{id}:
+    get:
+      summary: Get details of a specific Pokemon
+      parameters:
+        - name: id
+          in: path
+          description: The ID of the Pokemon to retrieve
+          required: true
+          schema:
+            type: string
+      responses:
+        "200":
+          description: Details of the specified Pokemon
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  id:
+                    type: integer
+                  name:
+                    type: string
+                  type:
+                    type: string
+                  abilities:
+                    type: array
+                    items:
+                      type: string
+        "400":
+          description: Bad request
+        "404":
+          description: Pokemon not found
+        "500":
+          description: Internal server error
